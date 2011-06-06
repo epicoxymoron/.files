@@ -49,13 +49,22 @@ let c_comment_strings=1
 set showmatch
 set guioptions-=T
 set incsearch
-set number
+set rnu
+
+" set up python syntax
+au FileType python setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
+
+"enable mix
+au BufRead,BufNewFile *.mix setfiletype mix
+au BufRead,BufNewFile *.mixal setfiletype mix
+
 filetype plugin indent on
 set hlsearch
 set nocompatible
 set sh=/bin/zsh
 inoremap jj <Esc>
-colorscheme desert
+"colorscheme wombat
+colorscheme ir_black
 
 set laststatus=2
 set background=dark
@@ -95,7 +104,5 @@ nnoremap <Leader>y "*y
 " set relativenumber when I open a buffer
 autocmd BufRead * set relativenumber
 
-" set up python syntax
-au FileType python setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 " vim: set ft=vim :
